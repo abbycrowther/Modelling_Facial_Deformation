@@ -1,0 +1,80 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Sep 30 13:17:45 2025
+
+@author: ninaj
+"""
+
+import nibabel as nib
+import cv2
+import numpy as np
+
+# Load NIfTI file
+img = nib.load("image2.nii")
+data = img.get_fdata()
+
+# Normalize data to 0-255 for 8-bit video
+data_min = data.min()
+data_max = data.max()
+data_norm = ((data - data_min) / (data_max - data_min) * 255).astype(np.uint8)
+
+# Get video dimensions
+height, width = data_norm.shape[0], data_norm.shape[1]
+
+# Create video writer (change FPS if you want)
+video = cv2.VideoWriter('output_video1.avi', cv2.VideoWriter_fourcc(*'XVID'), 15, (width, height), isColor=False)
+
+# Write each slice as a frame
+for i in range(data_norm.shape[2]):
+    frame = data_norm[:, :, i]
+    video.write(frame)
+
+video.release()
+print("Video saved as output_video1.avi")
+
+
+# Load NIfTI file
+img = nib.load("image2.nii")
+data = img.get_fdata()
+
+# Normalize data to 0-255 for 8-bit video
+data_min = data.min()
+data_max = data.max()
+data_norm = ((data - data_min) / (data_max - data_min) * 255).astype(np.uint8)
+
+# Get video dimensions
+height, width = data_norm.shape[0], data_norm.shape[1]
+
+# Create video writer (change FPS if you want)
+video = cv2.VideoWriter('output_video2.avi', cv2.VideoWriter_fourcc(*'XVID'), 15, (width, height), isColor=False)
+
+# Write each slice as a frame
+for i in range(data_norm.shape[2]):
+    frame = data_norm[:, :, i]
+    video.write(frame)
+
+video.release()
+print("Video saved as output_video2.avi")
+
+# Load NIfTI file
+img = nib.load("image3.nii")
+data = img.get_fdata()
+
+# Normalize data to 0-255 for 8-bit video
+data_min = data.min()
+data_max = data.max()
+data_norm = ((data - data_min) / (data_max - data_min) * 255).astype(np.uint8)
+
+# Get video dimensions
+height, width = data_norm.shape[0], data_norm.shape[1]
+
+# Create video writer (change FPS if you want)
+video = cv2.VideoWriter('output_video3.avi', cv2.VideoWriter_fourcc(*'XVID'), 15, (width, height), isColor=False)
+
+# Write each slice as a frame
+for i in range(data_norm.shape[2]):
+    frame = data_norm[:, :, i]
+    video.write(frame)
+
+video.release()
+print("Video saved as output_video3.avi")

@@ -1,0 +1,9 @@
+numpy
+torch==2.8.0
+SimpleITK
+TotalSegmentator
+ipywidgets
+nibabel
+opencv-python
+rt-utils
+pydicom
