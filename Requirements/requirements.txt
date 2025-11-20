@@ -8,3 +8,6 @@ opencv-python
 rt-utils
 pydicom
 scikit-image
+scikit-learn
+pyvista
+trimesh
