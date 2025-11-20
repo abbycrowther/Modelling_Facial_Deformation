@@ -11,3 +11,4 @@ scikit-image
 scikit-learn
 pyvista
 trimesh
+numpy-stl
